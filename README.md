@@ -32,5 +32,5 @@ we will run some examples:
 
 "ls no_such_file"
 
-echo $?
+
 <img width="737" alt="Screenshot 2023-01-19 at 21 42 56" src="https://user-images.githubusercontent.com/66851296/213544080-abb789df-acf4-41fc-a400-9a7616061193.png">
