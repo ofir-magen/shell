@@ -146,6 +146,24 @@ void Handle_Read_Command(char *varName) {
     Add(&variables, var);
 }
 
+int numberOfCommands(char *str)
+{
+    if (!*str)
+    {
+        return 0;
+    }
+
+    int cnt = 0;
+    while (*str)
+    {
+        if (*str == ' ')
+        {
+            cnt++;
+        }
+        str++;
+    }
+    return cnt + 1;
+}
 
 void Change_Current_Dir(char *path)
 {
@@ -193,6 +211,16 @@ int handleRedirection(char **argv, char **outfile, int size)
     return -1;
 }
 
+void printArgs(char **args)
+{
+    char **p = args;
+    while (*p != NULL)
+    {
+        fprintf(stderr, "%s ", *p);
+        p++;
+    }
+    fprintf(stderr, "\n");
+}
 void Split_Command(char *command)
 {
     char *token = strtok(command, EMPTY_STRING);
